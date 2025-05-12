@@ -20,3 +20,28 @@ window.togglePricing = function () {
     button.textContent =
         button.textContent === 'Zobraziť viac' ? 'Zobraziť menej' : 'Zobraziť viac';
 };
+
+window.addEventListener('DOMContentLoaded', () => {
+    const navbar = document.querySelector('.navbar');
+    const sections = document.querySelectorAll('.section');
+
+    function updateNavbarTheme() {
+        let currentTheme = null;
+
+        sections.forEach(section => {
+            const rect = section.getBoundingClientRect();
+            if (rect.top <= navbar.offsetHeight) {
+                currentTheme = section.dataset.theme;
+            }
+        });
+
+        if (currentTheme) {
+            navbar.classList.remove('light', 'dark');
+            navbar.classList.add(currentTheme);
+        }
+    }
+
+    window.addEventListener('scroll', updateNavbarTheme);
+    updateNavbarTheme(); // call once on load
+});
+

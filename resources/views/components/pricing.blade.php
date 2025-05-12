@@ -1,4 +1,4 @@
-<div class="pricing">
+<section class="pricing section" data-theme="dark">
     <div class="pricing-container">
         <div class="half">
             <div class="pricing-item"> <h3>Cena 1</h3><div class="token">od 100 EUR</div> </div>
@@ -18,4 +18,4 @@
     <div class="buttons">
         <button class="button" id="show" onclick="togglePricing()">Zobraziť viac</button>
     </div>
-</div>
+</section>

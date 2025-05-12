@@ -8,7 +8,7 @@
     --font-main: 'Inter', sans-serif;
 
     --font-large: 30px;
-    --font-medium: 18px;
+    --font-medium: 20px;
     --font-small: 14px;
 
     --border-radius: 38px;
@@ -68,6 +68,10 @@ body {
 
 
 
+section {
+    margin-bottom: 70px;
+}
+
 
 
 
@@ -97,13 +101,33 @@ body {
 }
 
 
+.navbar.light .button {
+    background-color: var(--color-yellow);
+    color: var(--color-green);
+}
+
+.navbar.light .brand a {
+    color: var(--color-yellow);
+}
+
+
+.navbar.dark .button {
+    background-color: var(--color-green);
+    color: var(--color-yellow);
+}
+
+.navbar.dark .brand a {
+    color: var(--color-green);
+}
+
+
 
 
 
 .grid-container {
     display: grid;
     grid-template-columns: repeat(12, 1fr);
-    grid-template-rows: repeat(10, auto);
+    grid-template-rows: repeat(9, auto);
     gap: 20px;
 }
 
@@ -127,6 +151,11 @@ body {
     object-fit: cover;
     border-radius: var(--border-radius);
     display: block;
+    transition: transform 0.5s ease, filter 0.5s ease;
+}
+
+.grid-item.image:hover img {
+    transform: scale(1.05);
 }
 
 .grid-item.text {
@@ -159,17 +188,26 @@ body {
     font-size: var(--font-large);
 }
 
+.grid-item p,
+.grid-item h2 {
+    margin: 0;
+    padding: 0;
+    font-family: var(--font-main);
+    font-size: var(--font-medium);
+    font-weight: normal;
+}
+
 
 
 
 
 .hero {
     padding: var(--padding-page);
+    padding-top: 40px;
 }
 
 .services {
     padding: var(--padding-page);
-    margin-bottom: var(--padding);
 }
 
 .gallery {
@@ -197,9 +235,12 @@ body {
     margin-bottom: var(--padding)
 }
 
-p {
+.banner h1 {
     margin: 0;
     padding: 0;
+    font-family: var(--font-main);
+    font-size: var(--font-medium);
+    font-weight: normal;
 }
 
 .highlight {

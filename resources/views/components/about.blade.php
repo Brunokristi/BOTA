@@ -1,4 +1,4 @@
-<div class="about">
+<section class="about section" data-theme="light">
     <div class="grid-container" style="height: 60vh;">
         <div class="grid-item image" style="grid-column: 1 / 4; grid-row: 1 / 9;"><img src="{{ asset('images/gardener_3.jpg') }}" alt="flowers" /></div>
         <div class="grid-item text" style="grid-column: 1/ 4; grid-row: 9 / 10;">zakladatel PETER</div>
@@ -8,4 +8,4 @@
         <div class="grid-item text" style="grid-column: 10 / 13; grid-row: 1 / 2;">syn TOMÁŠ</div>
         <div class="grid-item image" style="grid-column: 10 / 13; grid-row: 2 / 10;"><img src="{{ asset('images/gardener_1.jpg') }}" alt="hedge trimming" /></div>
     </div>
-</div>
+</section>

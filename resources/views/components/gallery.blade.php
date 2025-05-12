@@ -1,4 +1,4 @@
-<div class="gallery">
+<section class="gallery section" data-theme="light">
     <div class="container">
         <div class="slider" id="slider">
             <img src="{{ asset('images/flowers.jpg') }}" alt="flowers" />
@@ -16,4 +16,4 @@
             </button>
         </div>
     </div>
-</div>
+</section>

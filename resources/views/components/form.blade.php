@@ -1,4 +1,4 @@
-<section class="contact-form">
+<section class="contact-form section" data-theme="light" id="form">
     <h2>Dohodnime si stretnutie</h2>
 
     <form class="form-grid">

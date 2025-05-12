@@ -1,4 +1,4 @@
-<div class="projects">
+<section class="projects section" data-theme="dark">
     <h2>Naše nedávne projekty</h2>
     <div class="slider">
         <div class="card">
@@ -61,4 +61,4 @@
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
         </div>
     </div>       
-</div>
+</section>
