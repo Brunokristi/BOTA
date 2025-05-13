@@ -4,8 +4,13 @@
     <form class="form-grid">
         <div class="left-column">
             <input type="text" placeholder="Meno" class="form-input" />
-            <input type="text" placeholder="Preferovaná komunikácia" class="form-input" />
-            <input type="email" placeholder="Email" class="form-input" />
+            <select class="form-select">
+                <option disabled selected>Preferovaná komunikácia</option>
+                <option value="telefon">Telefón</option>
+                <option value="email">Email</option>
+                <option value="sprava">Správa</option>
+            </select>
+            <input type="email" placeholder="Kontakt" class="form-input" id="contact" />
         </div>
 
         <div class="right-column">

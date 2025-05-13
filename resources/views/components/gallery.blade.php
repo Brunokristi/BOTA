@@ -1,11 +1,25 @@
 <section class="gallery section" data-theme="light">
     <div class="container">
         <div class="slider" id="slider">
-            <img src="{{ asset('images/flowers.jpg') }}" alt="flowers" />
-            <img src="{{ asset('images/vegetables.jpg') }}" alt="tomato" />
-            <img src="{{ asset('images/gardener_1.jpg') }}" alt="hedge trimming" />
-            <img src="{{ asset('images/gardener_2.jpg') }}" alt="hedge trimming" />
-            <img src="{{ asset('images/gardener_3.jpg') }}" alt="hedge trimming" />
+            <div class="image">
+                <img src="{{ asset('images/flowers.jpg') }}" alt="flowers" />
+            </div>
+
+            <div class="image">
+                <img src="{{ asset('images/vegetables.jpg') }}" alt="tomato" />
+            </div>
+
+            <div class="image">
+                <img src="{{ asset('images/gardener_1.jpg') }}" alt="hedge trimming" />
+            </div>
+
+            <div class="image">
+                <img src="{{ asset('images/gardener_2.jpg') }}" alt="hedge trimming" />
+            </div>
+
+            <div class="image">
+                <img src="{{ asset('images/gardener_3.jpg') }}" alt="hedge trimming" />
+            </div>
         </div>
         <div class="slider-controls">
             <button class="button" onclick="moveSlide(-1)">

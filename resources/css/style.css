@@ -139,6 +139,7 @@ section {
     padding: var(--padding);
     overflow: hidden;
     position: relative;
+    transition: transform 0.5s ease, filter 0.5s ease;
 }
 
 .grid-item.image {
@@ -186,9 +187,11 @@ section {
     align-items: center;
     justify-content: center;
     font-size: var(--font-large);
+    transition: transform 0.6s ease;
 }
 
 .grid-item p,
+.grid-item h1,
 .grid-item h2 {
     margin: 0;
     padding: 0;
@@ -263,16 +266,32 @@ section {
     background-color: var(--color-dark);
     padding: var(--padding);
     border-radius: var(--border-radius);
+    padding-top: 50px;
 }
 
-.gallery img {
+.gallery .image {
     min-width: 300px;
     height: 400px;
     border-radius: var(--border-radius);
-    object-fit: cover;
+    transition: transform 0.5s ease, filter 0.5s ease;
+    overflow: hidden;
+    position: relative;
 }
 
-.gallery .slider::-webkit-scrollbar {
+.gallery .image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: var(--border-radius);
+    display: block;
+    transition: transform 0.5s ease, filter 0.5s ease;
+}
+
+.gallery .image:hover img {
+    transform: scale(1.05);
+}
+
+.slider::-webkit-scrollbar {
     height: 0px;
 }
 
@@ -281,7 +300,7 @@ section {
     justify-content: flex-end;
     align-items: center;
     gap: 20px;
-    padding: var(--padding) 0;
+    padding: var(--padding) 0 0 0;
 }
 
 
@@ -290,13 +309,14 @@ section {
 
 .projects {
     padding: var(--padding-page);
+    padding-top: 0px;
 }
 
-.projects h2 {
+h2 {
     font-size: var(--font-large);
     font-family: var(--font-accent);
     font-weight: normal;
-    text-transform: uppercase;
+    margin: 0;
     margin-bottom: 10px;
 }
 
@@ -308,6 +328,7 @@ section {
     width: 500px;
     height: 400px;
     font-family: var(--font-main);
+
 }
 
 .card img {
@@ -334,10 +355,11 @@ section {
 }
 
 .card h3 {
-    font-size: var(--font-large);
+    font-size: var(--font-medium);
     font-weight: normal;
     margin: 10px 0;
 }
+
 
 
 .pricing-container {
@@ -360,8 +382,26 @@ section {
     font-family: var(--font-main);
 }
 
-.hidden {
-    display: none;
+.pricing-item.showable {
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    visibility: hidden;
+    padding-top: 0;
+    padding-bottom: 0;
+    transition:
+        max-height 0.5s ease,
+        opacity 0.5s ease,
+        visibility 0.5s,
+        padding 0.5s ease;
+}
+
+.pricing-item.showable.visible {
+    max-height: 500px;
+    opacity: 1;
+    visibility: visible;
+    padding-top: var(--padding);
+    padding-bottom: var(--padding);
 }
 
 .pricing h3 {
@@ -377,9 +417,11 @@ section {
 }
 
 .pricing .button {
-    margin-top: var(--padding);
     background-color: var(--color-green);
     color: var(--color-yellow);
+    padding: 0;
+    margin: 0;
+    margin-top: var(--padding);
 }
 
 
@@ -413,7 +455,8 @@ section {
 }
 
 .form-input,
-.form-textarea {
+.form-textarea,
+.form-select {
     background-color: var(--color-dark);
     color: var(--color-yellow);
     border: none;
@@ -426,15 +469,28 @@ section {
 }
 
 .form-input:focus,
-.form-textarea:focus {
+.form-textarea:focus,
+.form-select:focus {
+    background-color: var(--color-dark);
     outline: none;
     box-shadow: 0 0 0 2px var(--color-yellow);
 }
 
 .form-input::placeholder,
-.form-textarea::placeholder {
+.form-textarea::placeholder,
+.form-select::placeholder {
     color: var(--color-yellow);
-    opacity: 0.8;
+}
+
+.form-select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg width='14' height='14' viewBox='0 0 16 16' fill='%23F1FF74' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1.5 5l6 6 6-6'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 1rem center;
+    background-size: 1rem;
+    padding-right: 3rem;
 }
 
 .form-textarea {
@@ -447,4 +503,71 @@ section {
     justify-content: end;
     margin-top: var(--padding);
 
+}
+
+
+.services .grid-item:hover {
+    transform: scale(1.05);
+}
+
+.services .grid-item:hover i {
+    transform: rotate(180deg);
+}
+
+
+footer {
+    background-color: var(--color-dark);
+    color: var(--color-yellow);
+    padding: var(--padding-page);
+    font-family: var(--font-main);
+    text-align: center;
+}
+
+footer .row h1 {
+    font-family: var(--font-accent);
+    font-size: var(--font-large);
+    font-weight: normal;
+    margin: 0;
+}
+
+footer .row p {
+    font-size: var(--font-medium);
+    margin: 0;
+    padding: 0;
+}
+
+footer .row {
+    align-items: center;
+    margin-bottom: var(--padding);
+}
+
+footer .contact-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+    margin-bottom: var(--padding);
+    font-size: var(--font-medium);
+    font-family: var(--font-main);
+    color: var(--color-yellow);
+    padding: 0;
+}
+
+
+footer a {
+    color: var(--color-yellow);
+    text-decoration: none;
+    padding: var(--padding-link);
+    font-size: var(--font-medium);
+}
+
+footer .social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    padding: var(--padding);
+}
+
+footer .social-icons i {
+    font-size: var(--font-large);
 }
